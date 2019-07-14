@@ -16,7 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tsc": "tsc",
+    "schema-refresh": "apollo schema:download --endpoint http://localhost:4466",
+    "types:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=**/*.tsx --endpoint http://localhost:4466 --tagName=gql --outputFlat src/generated --passthroughCustomScalars --customScalarsPrefix giftregistry"
   },
   "eslintConfig": {
     "extends": "react-app"
