@@ -10,6 +10,7 @@
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "apollo": "^2.8.3",
+    "apollo-boost": "^0.1.22",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
     "apollo-link": "^1.2.11",
@@ -36,7 +37,8 @@
     "eject": "react-scripts eject",
     "tsc": "tsc",
     "schema-refresh": "apollo schema:download --endpoint http://localhost:4466",
-    "types:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=**/*.tsx --endpoint http://localhost:4466 --tagName=gql --outputFlat src/generated --passthroughCustomScalars --customScalarsPrefix giftregistry"
+    "types:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=**/src/queries/*.tsx --endpoint http://localhost:4466 --tagName=gql --outputFlat src/generated --passthroughCustomScalars --customScalarsPrefix giftregistry",
+    "types:generate2" : "apollo codegen:generate --localSchemaFile=schema.json --target=typescript --includes=src/**/*.tsx --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts types"
   },
   "eslintConfig": {
     "extends": "react-app"

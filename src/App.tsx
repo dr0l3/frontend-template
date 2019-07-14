@@ -1,25 +1,28 @@
-import React from 'react';
+import * as React from 'react';
 import logo from './logo.svg';
+import { Query } from 'react-apollo'
 import './App.css';
+import listUsersQuery from './queries/listUsersQuery'
+import { listUsers, listUsers_users } from './queries/types/listUsers'
+
+class UsersQuery extends Query<listUsers, null> {}
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UsersQuery query={listUsersQuery}>
+      {({data, loading,error}) => (
+        <React.Fragment>
+          <h1> Users </h1>
+          {data && data.users && data.users.map(user => (
+            <div>
+              <div>Name: {user && user.name}</div>
+              <div>Email: {user && user.email}</div>
+            </div>
+          ))}
+        </React.Fragment>
+      )
+    }
+    </UsersQuery>
   );
 }
 
