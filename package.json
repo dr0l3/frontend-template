@@ -24,10 +24,11 @@
     "graphql-tools": "^4.0.4",
     "immer": "^2.1.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-apollo": "^2.5.4",
     "react-apollo-hooks": "^0.4.5",
+    "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
+    "semantic-ui-react": "^0.87.3",
     "typescript": "3.5.3"
   },
   "scripts": {
@@ -38,7 +39,7 @@
     "tsc": "tsc",
     "schema-refresh": "apollo schema:download --endpoint http://localhost:4466",
     "types:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=**/src/queries/*.tsx --endpoint http://localhost:4466 --tagName=gql --outputFlat src/generated --passthroughCustomScalars --customScalarsPrefix giftregistry",
-    "types:generate2" : "apollo codegen:generate --localSchemaFile=schema.json --target=typescript --includes=src/**/*.tsx --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts types"
+    "types:generate2": "apollo codegen:generate --localSchemaFile=schema.json --target=typescript --includes=src/**/*.tsx --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts types"
   },
   "eslintConfig": {
     "extends": "react-app"
