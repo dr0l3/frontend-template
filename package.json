@@ -22,7 +22,7 @@
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.1",
     "graphql-tools": "^4.0.4",
-    "immer": "^2.1.4",
+    "immer": "^8.0.1",
     "react": "^16.8.6",
     "react-apollo": "^2.5.4",
     "react-apollo-hooks": "^0.4.5",
